@@ -154,7 +154,7 @@ ZSTDLIB_API const char* ZSTD_versionString(void);
  *            or an error code if it fails (which can be tested using ZSTD_isError()). */
 ZSTDLIB_API size_t ZSTD_compress( void* dst, size_t dstCapacity,
                             const void* src, size_t srcSize,
-                                  int compressionLevel);
+                                  int compressionLevel); // NOTE:htt, zstd压缩
 
 /*! ZSTD_decompress() :
  *  `compressedSize` : must be the _exact_ size of some number of compressed and/or skippable frames.
@@ -234,7 +234,7 @@ ZSTDLIB_API size_t ZSTD_compressBound(size_t srcSize); /*!< maximum compressed s
 /* ZSTD_isError() :
  * Most ZSTD_* functions returning a size_t value can be tested for error,
  * using ZSTD_isError().
- * @return 1 if error, 0 otherwise
+ * @return 1 if error, 0 otherwise: NOTE:htt, 1有错，0正确
  */
 ZSTDLIB_API unsigned    ZSTD_isError(size_t code);          /*!< tells if a `size_t` function result is an error code */
 ZSTDLIB_API const char* ZSTD_getErrorName(size_t code);     /*!< provides readable string from an error code */
